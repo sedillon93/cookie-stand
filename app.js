@@ -1,3 +1,5 @@
+'use strict';
+
 var alki = {
   name: 'Alki',
   hours: [6,7,8,9,10,11,12,1,2,3,4,5,6,7,8],
@@ -20,13 +22,15 @@ var alki = {
   cookiesHourly: function(){
     for (var i = 0; i < this.hours.length; i++){
       var hourTotal = this.customersHourly * this.avgCookiesPerCustomer;
+      console.log(hourTotal);
       if (i <= 6){
         var displayMessage = this.hours[i] + 'am: ' + hourTotal + ' cookies';
       }
       else{
         var displayMessage = this.hours[i] + 'pm: ' + hourTotal + ' cookies';
       };
-      hourlySales.push(displayMessage);
+      this.hourlySales.push(displayMessage);
+      return this.hourlySales;
     }
   }
 };
