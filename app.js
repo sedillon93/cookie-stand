@@ -4,6 +4,7 @@ var alki = {
   minCustomersHourly: 2,
   maxCustomersHourly: 16,
   avgCookiesPerCustomer: 4.6,
+  hourlySales: [],
   customersHourly: function(){
     Math.floor(Math.random() * (maxCustomersHourly - minCustomersHourly) + minCustomersHourly);
   },
@@ -18,15 +19,14 @@ var alki = {
   },
   cookiesHourly: function(){
     for (var i = 0; i < this.hours.length; i++){
-      var hourlySales = [];
       var hourTotal = this.customersHourly * this.avgCookiesPerCustomer;
-      if (this.hours[i] < 12){
+      if (i <= 6){
         var displayMessage = this.hours[i] + 'am: ' + hourTotal + ' cookies';
       }
       else{
         var displayMessage = this.hours[i] + 'pm: ' + hourTotal + ' cookies';
       };
-      hourlySales.push(hourTotal);
+      hourlySales.push(displayMessage);
     }
   }
 };
