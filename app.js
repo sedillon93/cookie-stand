@@ -15,13 +15,7 @@ var alki = {
     for (var i = 0; i < this.hours.length; i++){
       var hourTotal = Math.round(this.customersHourly() * this.avgCookiesPerCustomer);
       console.log(hourTotal);
-      if (i < 6){
-        var displayMessage = this.hours[i] + 'am: ' + hourTotal + ' cookies';
-      }
-      else{
-        var displayMessage = this.hours[i] + 'pm: ' + hourTotal + ' cookies';
-      };
-      this.hourlySales.push(displayMessage);
+      this.hourlySales.push(hourTotal);
     }
     return this.hourlySales;
   }
