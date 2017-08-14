@@ -20,17 +20,30 @@ var alki = {
     }
     return this.hourlySales;
   },
-  // cookieSaleStatement creates an array of strings of the form 'time am: #ofcookies cookies'; stored in salesStatements
-  cookieSaleStatement: function(){
-    for (var i = 0; i < this.hourlySales.length; i++){
-      if (i < 6) {
-        var message = this.hours[i] + 'am: ' + this.hourlySales[i] + 'cookies';
-      }
-      else {
-        var message = this.hours[i] + 'pm: ' + this.hourlySales[i] + 'cookies';
-      }
-      this.salesStatements.push(message);
-    }
-    return this.salesStatements;
+
+  //add up all numbers in hourlySales array to get total number of cookies sold in a day at that location
+  totalCookies: function(){
+    total = 0;
+    for (var i = 0; i < this.hourlySales.length; i++)
+      total += this.hourlySales[i];
+    return total;
   }
 };
+
+  // cookieSaleStatement creates an array of strings of the form 'time am: #ofcookies cookies'; stored in salesStatements
+  // cookieSaleStatement: function(){
+  //   for (var i = 0; i < this.hourlySales.length; i++){
+  //     if (i < 6) {
+  //       var message = this.hours[i] + 'am: ' + this.hourlySales[i] + 'cookies';
+  //     }
+  //     else {
+  //       var message = this.hours[i] + 'pm: ' + this.hourlySales[i] + 'cookies';
+  //     }
+  //     this.salesStatements.push(message);
+  //   }
+  //   return this.salesStatements;
+  // }
+// };
+
+alki.cookiesHourly();
+alki.totalCookies();
