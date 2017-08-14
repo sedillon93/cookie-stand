@@ -6,31 +6,23 @@ var alki = {
   minCustomersHourly: 2,
   maxCustomersHourly: 16,
   avgCookiesPerCustomer: 4.6,
-  hourlySales: [],
   customersHourly: function(){
-    Math.floor(Math.random() * (maxCustomersHourly - minCustomersHourly) + minCustomersHourly);
+    var customers = Math.floor(Math.random() * (this.maxCustomersHourly - this.minCustomersHourly) + this.minCustomersHourly);
+    return customers;
   },
-  changeMinCustomers: function(newMin){
-    this.minCustomersHourly = newMin;
-  },
-  changeMaxCustomers: function(newMax){
-    this.maxCustomersHourly = newMax;
-  },
-  changeAvgCookies: function(newAvg){
-    this.avgCookiesPerCustomer = newAvg;
-  },
+  hourlySales: [],
   cookiesHourly: function(){
     for (var i = 0; i < this.hours.length; i++){
-      var hourTotal = this.customersHourly * this.avgCookiesPerCustomer;
+      var hourTotal = Math.round(this.customersHourly() * this.avgCookiesPerCustomer);
       console.log(hourTotal);
-      if (i <= 6){
+      if (i < 6){
         var displayMessage = this.hours[i] + 'am: ' + hourTotal + ' cookies';
       }
       else{
         var displayMessage = this.hours[i] + 'pm: ' + hourTotal + ' cookies';
       };
       this.hourlySales.push(displayMessage);
-      return this.hourlySales;
     }
+    return this.hourlySales;
   }
 };
