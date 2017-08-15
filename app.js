@@ -44,13 +44,13 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
 //for every element in the hourlyCookieSales array create a new li node & add the text '#am/pm: # cookies' to ul; add li node to ul node in the DOM
     for (var i = 0; i < this.hourlyCookieSales.length; i++) {
       var newLi = document.createElement('li');
-      newLi.innerText = this.hours[i] + ': ' + this.hourlyCookieSales[i] + ' cookies';
+      newLi.innerText = hours[i] + ': ' + this.hourlyCookieSales[i] + ' cookies';
       ul.appendChild(newLi);
     }
 //create a new li element with the text of total; append li node to ul node in DOM
     var totalCookies = document.createElement('li');
     totalCookies.innerText = 'Total: ' + this.total + ' cookies';
-    ul.appendChild(allCookies);
+    ul.appendChild(totalCookies);
   };
   this.cookieSaleStatement();
 };
