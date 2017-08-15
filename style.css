@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gray;
+}
+
+table {
+  background-color: yellow;
+}
+
+ul {
+  list-style-type: none;
+  position: absolute;
+  bottom: 30px;
+}
+
+li {
+  text-decoration: none;
+  display: inline-block;
+}
