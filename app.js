@@ -31,12 +31,13 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     }
     this.totalCookiesSold = 'Total: ' + total + ' cookies';
   };
-  //call fucntion to calculate total cookies sold in a day at specified location
+  //call function to calculate total cookies sold in a day at specified location; create & add h1 node with name to DOM; create & add ul to DOM; create & add li nodes with string '#am/pm: # cookies' to ul
   cookieSaleStatement = function(){
     this.totalCookies();
-    for (var i = 0; i < this.hourlySales.length; i++){
-      return this.salesStatements;
-    }
+    var body = getElementsByTagName('body')[0];
+    var name = createElement('h3');
+    name.innerText = this.name;
+    body.appendChild(name);
   };
 }
 
