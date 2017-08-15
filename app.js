@@ -45,8 +45,9 @@ var capHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 
 var stores = [pike, seaTac, seattleCenter, capHill, alki];
-for (var i = 0; i < stores.length; i ++){
-  var render = function(){
+
+for (var i = 0; i < stores.length; i++){
+  stores[i].render = function(){
     var table = document.getElementsByTagName('table')[0];
     var tr = document.createElement('tr');
     table.appendChild(tr);
@@ -60,6 +61,7 @@ for (var i = 0; i < stores.length; i ++){
       tr.appendChild(tdCookies);
     }
   };
+  render();
 }
 
 var header = function(){
