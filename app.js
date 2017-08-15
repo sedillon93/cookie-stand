@@ -20,40 +20,32 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     }
     return this.hourlyCookieSales;
   };
-  customersHourly();
-  cookiesHourly();
-};
-
-//start 1st and Pike store object, methods, & DOM manipulation
-var pike = {
-  name: '1st and Pike',
-  minCustomersHourly: 23,
-  maxCustomersHourly: 65,
-  avgCookiesPerCustomer: 6.3,
-  hourlyCookieSalesy: [],
-  salesStatements: [],
-  totalCookiesSold: '',
-
-    // cookieSaleStatement creates an array of strings of the form 'time am: #ofcookies cookies'; stored in salesStatements
-  cookieSaleStatement: function(){
+  totalCookies = function(){
+    var total = 0;
+    for (var i = 0; i < this.hourlyCookieSales.length; i++){
+      total = total + this.hourlyCookieSales[i];
+    }
+    this.totalCookiesSold = 'Total: ' + total + ' cookies';
+  };
+  cookieSaleStatement = function(){
+    this.cookiesHourly();
+    this.totalCookies();
     for (var i = 0; i < this.hourlySales.length; i++){
       return this.salesStatements;
     }
-  },
+  };
+}
 
-  //add up all numbers in hourlySales array to get total number of cookies sold in a day at that location
-  totalCookies: function(){
-    var total = 0;
-    for (var i = 0; i < this.hourlySales.length; i++){
-      total = total + this.hourlySales[i];
-    }
-    this.totalCookiesSold = 'Total: ' + total + ' cookies';
-  }
+//start 1st and Pike store object, methods, & DOM manipulation
+var pike = {
+  // name: '1st and Pike',
+  // minCustomersHourly: 23,
+  // maxCustomersHourly: 65,
+  // avgCookiesPerCustomer: 6.3,
+  // hourlyCookieSales: [],
+  salesStatements: [],
+  // totalCookiesSold: '',
 };
-
-pike.cookiesHourly();
-pike.cookieSaleStatement();
-pike.totalCookies();
 
 var body = document.getElementsByTagName('body')[0];
 var h3 = document.createElement('h3');
