@@ -8,7 +8,7 @@ var alki = {
   avgCookiesPerCustomer: 4.6,
   hourlySales: [],
   salesStatements: [],
-  totalCookiesSold: [],
+  totalCookiesSold: '',
   // customersHourly returns a random number of customers
   customersHourly: function(){
     var customers = Math.floor(Math.random() * (this.maxCustomersHourly - this.minCustomersHourly) + this.minCustomersHourly);
@@ -43,10 +43,8 @@ var alki = {
     var total = 0;
     for (var i = 0; i < this.hourlySales.length; i++){
       total = total + this.hourlySales[i];
-      var message = 'Total: ' + total + ' cookies';
-      this.totalCookiesSold.push(message);
     }
-    return total;
+    this.totalCookiesSold = 'Total: ' + total + ' cookies';
   }
 };
 
@@ -55,15 +53,22 @@ alki.cookieSaleStatement();
 alki.totalCookies();
 
 var body = document.getElementsByTagName('body')[0];
+var h1 = document.createElement('h1');
+h1.id = 'name';
+h1.innerText = alki.name;
+body.appendChild(h1);
+
 var ul = document.createElement('ul');
-var heading = document.createElement('h1');
-h1.id = 'stoeName';
 ul.id = 'alki';
 body.appendChild(ul);
-body.appendChild(h1);
 
 for (var i = 0; i < alki.salesStatements.length; i++) {
   var newLi = document.createElement('li');
   newLi.innerText = alki.salesStatements[i];
   ul.appendChild(newLi);
 }
+
+var allCookies = document.createElement('p');
+p.id = 'total';
+p.innerText = alki.totalCookiesSold[0];
+body.appendChild(p);
