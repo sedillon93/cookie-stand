@@ -1,5 +1,6 @@
 'use strict';
 
+//start fifth store object, methods, & DOM manipulation
 var alki = {
   name: 'Alki',
   hours: [6,7,8,9,10,11,12,1,2,3,4,5,6,7,8],
@@ -68,6 +69,8 @@ for (var i = 0; i < alki.salesStatements.length; i++) {
   ul.appendChild(newLi);
 }
 
-var allCookies = document.createElement('p');
+var allCookies = document.createElement('li');
 allCookies.innerText = alki.totalCookiesSold;
-body.appendChild(allCookies);
+ul.appendChild(allCookies);
+
+//end fifth store
