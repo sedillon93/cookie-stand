@@ -51,3 +51,17 @@ var alki = {
 alki.cookiesHourly();
 alki.cookieSaleStatement();
 alki.totalCookies();
+//
+//
+//
+//
+//
+var ul = document.createElement('ul');
+ul.id = 'alki';
+body.appendChild(ul);
+
+for (var i = 0; i < this.salesStatements.length; i++) {
+  var newLi = document.createElement('li');
+  newLi.innerText = this.salesStatements[i]; // <--- if you want to change the inner text
+  alki.appendChild(newLi);
+}
