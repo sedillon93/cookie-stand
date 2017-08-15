@@ -9,13 +9,13 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
   this.avgCookiesPerCustomer = avgCookiesPerCustomer;
   this.hourlyCookieSales = [];
   //generate random number of customers in an hour
-  customersHourly = function(){
+  this.customersHourly = function(){
     var customers = Math.floor(Math.random() * (this.maxCustomersHourly - this.minCustomersHourly) + this.minCustomersHourly);
     return customers;
   };
   //call function to generate hourly customers; for length of hours array generate number of cookies sold/hour and push into hourlyCookieSales array
-  cookiesHourly = function(){
-    hourlyCookieSales = [];
+  this.cookiesHourly = function(){
+    this.hourlyCookieSales = [];
     for (var i = 0; i < hours.length; i++){
       var hourTotal = Math.round(this.customersHourly() * this.avgCookiesPerCustomer);
       this.hourlyCookieSales.push(hourTotal);
@@ -23,7 +23,7 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     return this.hourlyCookieSales;
   };
   //call function to generate hourly sales; calculate total cookies sold in a day at specified location by adding each value in hourlyCookieSales array to running total
-  totalCookies = function(){
+  this.totalCookies = function(){
     var total = 0;
     this.cookiesHourly();
     for (var i = 0; i < this.hourlyCookieSales.length; i++){
@@ -32,27 +32,28 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     return total;
   };
   //call function to calculate total cookies sold in a day at specified location; create & add h1 node with name to DOM; create & add ul to DOM
-  cookieSaleStatement = function(){
+  this.cookieSaleStatement = function(){
     this.totalCookies();
-    var body = getElementsByTagName('body')[0];
-    var name = createElement('h3');
-    name.innerText = this.name;
-    body.appendChild(name);
+    var body = document.getElementsByTagName('body')[0];
+    var storeName = document.createElement('h3');
+    storeName.innerText = this.name;
+    body.appendChild(storeName);
 
     var ul = document.createElement('ul');
     body.appendChild(ul);
-  };
 //for every element in the hourlyCookieSales array create a new li node & add the text '#am/pm: # cookies' to ul; add li node to ul node in the DOM
-  for (var i = 0; i < this.hourlyCookieSales.length; i++) {
-    var newLi = document.createElement('li');
-    newLi.innerText = hours[i] + ': ' + this.hourlyCookieSales[i] + ' cookies';
-    ul.appendChild(newLi);
-  }
+    for (var i = 0; i < this.hourlyCookieSales.length; i++) {
+      var newLi = document.createElement('li');
+      newLi.innerText = this.hours[i] + ': ' + this.hourlyCookieSales[i] + ' cookies';
+      ul.appendChild(newLi);
+    }
 //create a new li element with the text of total; append li node to ul node in DOM
-  var allCookies = document.createElement('li');
-  allCookies.innerText = 'Total: ' + this.total + ' cookies';
-  ul.appendChild(allCookies);
-}
+    var totalCookies = document.createElement('li');
+    totalCookies.innerText = 'Total: ' + this.total + ' cookies';
+    ul.appendChild(allCookies);
+  };
+  this.cookieSaleStatement();
+};
 
 var pike = new Store('1st and Pike', 23, 65, 6.3);
 var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
