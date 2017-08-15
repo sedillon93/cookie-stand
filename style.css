@@ -2,14 +2,26 @@
   box-sizing: border-box;
   font-family: georgia;
   color: white;
+  font-size: 20px;
+  line-height: 1.5
 }
 
 body {
   background-color: gray;
 }
 
+img {
+  margin: auto;
+  display: block;
+}
+
 .highlights {
   font-family: 'Oswald', sans-serif;
+}
+
+#grandOpen {
+  font-size: 34px;
+  text-align: center;
 }
 
 .data {
@@ -19,7 +31,7 @@ body {
 
 .table {
   background-color: #28282d;
-  color: yellow;
+  color: #e0e057;
 }
 
 .boxes {
@@ -29,7 +41,7 @@ body {
 ul {
   list-style-type: none;
   position: absolute;
-  bottom: 30px;
+  bottom: 10px;
 }
 
 li {
