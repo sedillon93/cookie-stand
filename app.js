@@ -2,8 +2,6 @@
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-var stores = [pike, seaTac, seattleCenter, capHill, alki];
-
 function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustomer){
   this.name = name;
   this.mincCustomersHourly = minCustomersHourly;
@@ -55,6 +53,12 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
   allCookies.innerText = 'Total: ' + this.total + ' cookies';
   ul.appendChild(allCookies);
 }
+
+var pike = new Store('1st and Pike', 23, 65, 6.3);
+var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
+var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
+var capHill = new Store('Capitol Hill', 20, 38, 2.3);
+var alki = new Store('Alki', 2, 16, 4.6);
 
 //start 1st and Pike store object, methods, & DOM manipulation
 // var body = document.getElementsByTagName('body')[0];
