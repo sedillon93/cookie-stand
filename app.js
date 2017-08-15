@@ -56,8 +56,11 @@ alki.totalCookies();
 
 var body = document.getElementsByTagName('body')[0];
 var ul = document.createElement('ul');
+var heading = document.createElement('h1');
+h1.id = 'stoeName';
 ul.id = 'alki';
 body.appendChild(ul);
+body.appendChild(h1);
 
 for (var i = 0; i < alki.salesStatements.length; i++) {
   var newLi = document.createElement('li');
