@@ -4,9 +4,10 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustomer){
   this.name = name;
-  this.mincCustomersHourly = minCustomersHourly;
+  this.minCustomersHourly = minCustomersHourly;
   this.maxCustomersHourly = maxCustomersHourly;
   this.avgCookiesPerCustomer = avgCookiesPerCustomer;
+  this.total = 0;
   this.hourlyCookieSales = [];
   //generate random number of customers in an hour
   this.customersHourly = function(){
@@ -27,9 +28,8 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     var total = 0;
     this.cookiesHourly();
     for (var i = 0; i < this.hourlyCookieSales.length; i++){
-      total = total + this.hourlyCookieSales[i];
+      this.total += this.hourlyCookieSales[i];
     }
-    return total;
   };
   //call function to calculate total cookies sold in a day at specified location; create & add h1 node with name to DOM; create & add ul to DOM
   this.cookieSaleStatement = function(){
