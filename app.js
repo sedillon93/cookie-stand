@@ -8,7 +8,7 @@ var alki = {
   avgCookiesPerCustomer: 4.6,
   hourlySales: [],
   salesStatements: [],
-  total: [],
+  totalCookiesSold: [],
   // customersHourly returns a random number of customers
   customersHourly: function(){
     var customers = Math.floor(Math.random() * (this.maxCustomersHourly - this.minCustomersHourly) + this.minCustomersHourly);
@@ -40,28 +40,27 @@ var alki = {
 
   //add up all numbers in hourlySales array to get total number of cookies sold in a day at that location
   totalCookies: function(){
-    total = 0;
-    for (var i = 0; i < this.hourlySales.length; i++)
-      total += this.hourlySales[i];
-    var message = 'Total: ' + total + ' cookies';
-    this.total.push(message);
+    var total = 0;
+    for (var i = 0; i < this.hourlySales.length; i++){
+      total = total + this.hourlySales[i];
+      var message = 'Total: ' + total + ' cookies';
+      this.totalCookiesSold.push(message);
+    }
+    return total;
   }
 };
 
 alki.cookiesHourly();
 alki.cookieSaleStatement();
 alki.totalCookies();
-//
-//
-//
-//
-//
+
+var body = document.getElementsByTagName('body')[0];
 var ul = document.createElement('ul');
 ul.id = 'alki';
 body.appendChild(ul);
 
-for (var i = 0; i < this.salesStatements.length; i++) {
+for (var i = 0; i < alki.salesStatements.length; i++) {
   var newLi = document.createElement('li');
-  newLi.innerText = this.salesStatements[i]; // <--- if you want to change the inner text
-  alki.appendChild(newLi);
+  newLi.innerText = alki.salesStatements[i];
+  ul.appendChild(newLi);
 }
