@@ -14,16 +14,16 @@ body {
 
 .data {
   font-family: verdana;
-  color: green;
+  color: #245a24;
 }
 
 .table {
-  background-color: blue;
+  background-color: #28282d;
   color: yellow;
 }
 
 .boxes {
-  background-color: blue;
+  background-color: #28282d;
 }
 
 ul {
