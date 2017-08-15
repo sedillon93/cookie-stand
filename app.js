@@ -34,19 +34,8 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
   //call function to calculate total cookies sold in a day at specified location; create & add h1 node with name to DOM; create & add ul to DOM
   this.cookieSaleStatement = function(){
     this.totalCookies();
-    var table = document.getElementsByTagName('table')[0];
-    var row = document.createElement('tr');
-    table.appendChild(row);
-
-    var emptyCell = document.createElement('th');
-    row.appendChild(emptyCell);
-
-    //
-    // for (var i = 0; i < hours.length; i++){
-    //
-    // }
+    this.cookieSaleStatement();
   };
-  this.cookieSaleStatement();
 };
 
 var pike = new Store('1st and Pike', 23, 65, 6.3);
@@ -54,6 +43,21 @@ var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
 var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
+
+var render = function(){
+  var table = document.getElementsByTagName('table')[0];
+  var row = document.createElement('tr');
+  table.appendChild(row);
+
+  var emptyCell = document.createElement('th');
+  row.appendChild(emptyCell);
+
+  for (var i = 0; i < hours.length; i++){
+    var cell = document.createElement('td');
+    cell.innerText = hours[i];
+    row.appendChild(cell);
+  }
+};
 
 // var body = document.getElementsByTagName('body')[0];
 // var storeName = document.createElement('h3');
