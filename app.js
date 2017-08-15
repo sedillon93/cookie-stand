@@ -50,7 +50,6 @@ var header = function(){
   table.appendChild(tr);
 
   var emptyCell = document.createElement('th');
-  emptyCell.innerText = ' ';
   tr.appendChild(emptyCell);
 
   for (var i = 0; i < hours.length; i++){
@@ -60,7 +59,22 @@ var header = function(){
   }
 };
 
+var render = function(){
+  var table = document.getElementsByTagName('table')[0];
+  var tr = document.createElement('tr');
+  table.appendChild(tr);
+  var name = document.createElement('td');
+  name.innerText = this.name;
+
+  for (var i = 0; i < this.hourlyCookieSales.length; i++){
+    var tdCookies = document.createElement('td');
+    tdCookies.innerText = hourlyCookieSales[i];
+    tr.appendChild(tdCookies);
+  }
+};
+
 header();
+alki.render();
 // var body = document.getElementsByTagName('body')[0];
 // var storeName = document.createElement('h3');
 // storeName.innerText = this.name;
