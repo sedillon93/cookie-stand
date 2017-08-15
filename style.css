@@ -1,13 +1,30 @@
 * {
   box-sizing: border-box;
+  font-family: ;
+  color: white;
 }
 
 body {
   background-color: gray;
 }
 
-table {
-  background-color: yellow;
+.highlights {
+  font-family: ;
+}
+
+.data {
+  font-family: ;
+  color: green;
+}
+
+.table {
+  background-color: blue;
+  font-family: ;
+  color: yellow;
+}
+
+.boxes {
+  background-color: blue;
 }
 
 ul {
