@@ -44,21 +44,23 @@ var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 
-var render = function(){
+var header = function(){
   var table = document.getElementsByTagName('table')[0];
-  var row = document.createElement('tr');
-  table.appendChild(row);
+  var tr = document.createElement('tr');
+  table.appendChild(tr);
 
   var emptyCell = document.createElement('th');
-  row.appendChild(emptyCell);
+  emptyCell.innerText = ' ';
+  tr.appendChild(emptyCell);
 
   for (var i = 0; i < hours.length; i++){
-    var cell = document.createElement('td');
-    cell.innerText = hours[i];
-    row.appendChild(cell);
+    var cellHeaders = document.createElement('th');
+    cellHeaders.innerText = hours[i];
+    tr.appendChild(cellHeaders);
   }
 };
 
+header();
 // var body = document.getElementsByTagName('body')[0];
 // var storeName = document.createElement('h3');
 // storeName.innerText = this.name;
