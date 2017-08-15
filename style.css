@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  font-family: georgia;
+  color: white;
+  font-size: 20px;
+  line-height: 1.5
+}
+
+body {
+  background-color: gray;
+}
+
+img {
+  margin: auto;
+  display: block;
+}
+
+.highlights {
+  font-family: 'Oswald', sans-serif;
+  color: blue;
+}
+
+#grandOpen {
+  font-size: 34px;
+  text-align: center;
+}
+
+.data {
+  font-family: verdana;
+  color: #245a24;
+}
+
+.table {
+  background-color: #28282d;
+  color: #e0e057;
+}
+
+.boxes {
+  background-color: #28282d;
+}
+
+ul {
+  list-style-type: none;
+  position: absolute;
+  bottom: 10px;
+}
+
+li {
+  text-decoration: none;
+  display: inline-block;
+}
