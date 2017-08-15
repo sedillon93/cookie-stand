@@ -8,10 +8,12 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
   this.maxCustomersHourly = maxCustomersHourly;
   this.avgCookiesPerCustomer = avgCookiesPerCustomer;
   this.hourlyCookieSales = [];
+  //generate random number of customers in an hour
   customersHourly = function(){
     var customers = Math.floor(Math.random() * (this.maxCustomersHourly - this.minCustomersHourly) + this.minCustomersHourly);
     return customers;
   };
+  //call function to generate hourly customers; for length of hours array generate number of cookies sold/hour and push into hourlyCookieSales array
   cookiesHourly = function(){
     hourlyCookieSales = [];
     for (var i = 0; i < hours.length; i++){
@@ -20,15 +22,17 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     }
     return this.hourlyCookieSales;
   };
+  //call function to generate hourly sales; calculate total cookies sold in a day at specified location by adding each value in hourlyCookieSales array to running total
   totalCookies = function(){
     var total = 0;
+    this.cookiesHourly();
     for (var i = 0; i < this.hourlyCookieSales.length; i++){
       total = total + this.hourlyCookieSales[i];
     }
     this.totalCookiesSold = 'Total: ' + total + ' cookies';
   };
+  //call fucntion to calculate total cookies sold in a day at specified location
   cookieSaleStatement = function(){
-    this.cookiesHourly();
     this.totalCookies();
     for (var i = 0; i < this.hourlySales.length; i++){
       return this.salesStatements;
@@ -37,16 +41,6 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
 }
 
 //start 1st and Pike store object, methods, & DOM manipulation
-var pike = {
-  // name: '1st and Pike',
-  // minCustomersHourly: 23,
-  // maxCustomersHourly: 65,
-  // avgCookiesPerCustomer: 6.3,
-  // hourlyCookieSales: [],
-  salesStatements: [],
-  // totalCookiesSold: '',
-};
-
 var body = document.getElementsByTagName('body')[0];
 var h3 = document.createElement('h3');
 h3.className = 'name';
