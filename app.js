@@ -1,5 +1,79 @@
 'use strict';
 
+//start Capitol Hill store object, methods, & DOM manipulation
+var pike = {
+  name: '1st and Pike',
+  hours: [6,7,8,9,10,11,12,1,2,3,4,5,6,7,8],
+  minCustomersHourly: 23,
+  maxCustomersHourly: 65,
+  avgCookiesPerCustomer: 6.3,
+  hourlySales: [],
+  salesStatements: [],
+  totalCookiesSold: '',
+  // customersHourly returns a random number of customers
+  customersHourly: function(){
+    var customers = Math.floor(Math.random() * (this.maxCustomersHourly - this.minCustomersHourly) + this.minCustomersHourly);
+    return customers;
+  },
+
+  // cookiesHourly creates an array of the cookies sold per hour, each element corresponds to sales for one hour; stored in hourlySales
+  cookiesHourly: function(){
+    for (var i = 0; i < this.hours.length; i++){
+      var hourTotal = Math.round(this.customersHourly() * this.avgCookiesPerCustomer);
+      this.hourlySales.push(hourTotal);
+    }
+    return this.hourlySales;
+  },
+
+    // cookieSaleStatement creates an array of strings of the form 'time am: #ofcookies cookies'; stored in salesStatements
+  cookieSaleStatement: function(){
+    for (var i = 0; i < this.hourlySales.length; i++){
+      if (i < 6) {
+        var message = this.hours[i] + 'am: ' + this.hourlySales[i] + ' cookies';
+      }
+      else {
+        var message = this.hours[i] + 'pm: ' + this.hourlySales[i] + ' cookies';
+      }
+      this.salesStatements.push(message);
+    }
+    return this.salesStatements;
+  },
+
+  //add up all numbers in hourlySales array to get total number of cookies sold in a day at that location
+  totalCookies: function(){
+    var total = 0;
+    for (var i = 0; i < this.hourlySales.length; i++){
+      total = total + this.hourlySales[i];
+    }
+    this.totalCookiesSold = 'Total: ' + total + ' cookies';
+  }
+};
+
+pike.cookiesHourly();
+pike.cookieSaleStatement();
+pike.totalCookies();
+
+var body = document.getElementsByTagName('body')[0];
+var h3 = document.createElement('h3');
+h3.className = 'name';
+h3.innerText = pike.name;
+body.appendChild(h3);
+
+var ul = document.createElement('ul');
+ul.id = 'pike';
+body.appendChild(ul);
+
+for (var i = 0; i < pike.salesStatements.length; i++) {
+  var newLi = document.createElement('li');
+  newLi.innerText = pike.salesStatements[i];
+  ul.appendChild(newLi);
+}
+
+var allCookies = document.createElement('li');
+allCookies.innerText = pike.totalCookiesSold;
+ul.appendChild(allCookies);
+//end 1st and Pike object
+
 //start SeaTac store object, methods, & DOM manipulation
 var seaTac = {
   name: 'SeaTac Airport',
@@ -54,10 +128,10 @@ seaTac.cookieSaleStatement();
 seaTac.totalCookies();
 
 var body = document.getElementsByTagName('body')[0];
-var h1 = document.createElement('h1');
-h1.className = 'name';
-h1.innerText = seaTac.name;
-body.appendChild(h1);
+var h3 = document.createElement('h3');
+h3.className = 'name';
+h3.innerText = seaTac.name;
+body.appendChild(h3);
 
 var ul = document.createElement('ul');
 ul.id = 'seaTac';
@@ -128,10 +202,10 @@ seattleCenter.cookieSaleStatement();
 seattleCenter.totalCookies();
 
 var body = document.getElementsByTagName('body')[0];
-var h1 = document.createElement('h1');
-h1.className = 'name';
-h1.innerText = seattleCenter.name;
-body.appendChild(h1);
+var h3 = document.createElement('h3');
+h3.className = 'name';
+h3.innerText = seattleCenter.name;
+body.appendChild(h3);
 
 var ul = document.createElement('ul');
 ul.id = 'seattleCenter';
@@ -202,10 +276,10 @@ capHill.cookieSaleStatement();
 capHill.totalCookies();
 
 var body = document.getElementsByTagName('body')[0];
-var h1 = document.createElement('h1');
-h1.className = 'name';
-h1.innerText = capHill.name;
-body.appendChild(h1);
+var h3 = document.createElement('h3');
+h3.className = 'name';
+h3.innerText = capHill.name;
+body.appendChild(h3);
 
 var ul = document.createElement('ul');
 ul.id = 'capHill';
@@ -276,10 +350,10 @@ alki.cookieSaleStatement();
 alki.totalCookies();
 
 var body = document.getElementsByTagName('body')[0];
-var h1 = document.createElement('h1');
-h1.id = 'name';
-h1.innerText = alki.name;
-body.appendChild(h1);
+var h3 = document.createElement('h3');
+h3.id = 'name';
+h3.innerText = alki.name;
+body.appendChild(h3);
 
 var ul = document.createElement('ul');
 ul.id = 'alki';
