@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: ;
+  font-family: georgia;
   color: white;
 }
 
@@ -9,17 +9,16 @@ body {
 }
 
 .highlights {
-  font-family: ;
+  font-family: 'Oswald', sans-serif;
 }
 
 .data {
-  font-family: ;
+  font-family: verdana;
   color: green;
 }
 
 .table {
   background-color: blue;
-  font-family: ;
   color: yellow;
 }
 
