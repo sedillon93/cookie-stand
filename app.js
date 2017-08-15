@@ -69,6 +69,5 @@ for (var i = 0; i < alki.salesStatements.length; i++) {
 }
 
 var allCookies = document.createElement('p');
-p.id = 'total';
-p.innerText = alki.totalCookiesSold[0];
-body.appendChild(p);
+allCookies.innerText = alki.totalCookiesSold;
+body.appendChild(allCookies);
