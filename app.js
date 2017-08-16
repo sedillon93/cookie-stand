@@ -39,11 +39,6 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
 
   this.render = function(){
     var table = document.getElementById('summary');
-    // for (var i = 0; i < stores.length; i++){
-    //   var row = document.createElement('tr');
-    //   var name = document.createElement('td');
-    //   name.innerText = stores[i].name;
-    //   row.appendChild(name);
     var row = document.createElement('tr');
     var name = document.createElement('td');
     name.innerText = this.name;
@@ -120,7 +115,7 @@ function createStore(event){
   store.minCustomersHourly = this.elements['minHourly'].value;
   store.maxCustomersHourly = this.elements['maxHourly'].value;
   store.avgCookiesPerCustomer = this.elements['avgCookies'].value;
-  console.log(store.avgCookiesPerCustomer);
+  store.name.render();
 };
 
 var form = document.getElementById('form');
