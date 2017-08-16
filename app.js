@@ -37,6 +37,28 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     this.totalCookies();
   };
   this.cookieSaleStatement();
+
+  this.render = function(){
+    var table = document.getElementById('summary');
+    // for (var i = 0; i < stores.length; i++){
+    //   var row = document.createElement('tr');
+    //   var name = document.createElement('td');
+    //   name.innerText = stores[i].name;
+    //   row.appendChild(name);
+    var row = document.createElement('tr');
+    var name = document.createElement('td');
+    name.innerText = this.name;
+    row.appendChild(name);
+    for (var j = 0; j < hours.length; j++){
+      var tdCookies = document.createElement('td');
+      tdCookies.innerText = this.hourlyCookieSales[j];
+      row.appendChild(tdCookies);
+    }
+    var total = document.createElement('td');
+    total.innerText = this.total;
+    row.appendChild(total);
+    table.appendChild(row);
+  };
 };
 
 var pike = new Store('1st and Pike', 23, 65, 6.3);
@@ -45,8 +67,10 @@ var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 
+var stores = [pike, seaTac, seattleCenter, capHill, alki];
+
 var header = function(){
-  var table = document.getElementsByTagName('table')[0];
+  var table = document.getElementById('summary');
   var tr = document.createElement('tr');
   table.appendChild(tr);
 
@@ -63,28 +87,8 @@ var header = function(){
   tr.appendChild(dailyTotal);
 };
 
-var stores = [pike, seaTac, seattleCenter, capHill, alki];
-var render = function(){
-  var table = document.getElementsByTagName('table')[0];
-  for (var i = 0; i < stores.length; i++){
-    var row = document.createElement('tr');
-    var name = document.createElement('td');
-    name.innerText = stores[i].name;
-    row.appendChild(name);
-    for (var j = 0; j < hours.length; j++){
-      var tdCookies = document.createElement('td');
-      tdCookies.innerText = stores[i].hourlyCookieSales[j];
-      row.appendChild(tdCookies);
-    }
-    var total = document.createElement('td');
-    total.innerText = stores[i].total;
-    row.appendChild(total);
-    table.appendChild(row);
-  }
-};
-
 var footer = function(){
-  var table = document.getElementsByTagName('table')[0];
+  var table = document.getElementById('summary');
   var row = document.createElement('tr');
   var total = document.createElement('td');
   total.innerText = 'Totals';
@@ -93,5 +97,7 @@ var footer = function(){
 };
 
 header();
-render();
+for (var i = 0; i < stores.length; i++){
+  stores[i].render();
+}
 footer();
