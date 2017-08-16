@@ -46,23 +46,20 @@ var alki = new Store('Alki', 2, 16, 4.6);
 
 var stores = [pike, seaTac, seattleCenter, capHill, alki];
 
-for (var i = 0; i < stores.length; i++){
-  stores[i].render = function(){
-    var table = document.getElementsByTagName('table')[0];
-    var tr = document.createElement('tr');
-    table.appendChild(tr);
-    var name = document.createElement('td');
-    name.innerText = this.name;
-    tr.appendChild(name);
-
-    for (var i = 0; i < this.hourlyCookieSales.length; i++){
+var render = function(){
+  var table = document.getElementsByTagName('table')[0];
+  for (var i = 0; i < stores.length; i++){
+    var row = document.createElement('tr');
+    for (var j = 0; j < hours.length; j++){
       var tdCookies = document.createElement('td');
-      tdCookies.innerText = this.hourlyCookieSales[i];
-      tr.appendChild(tdCookies);
+      tdCookies.innerText = stores[i].hourlyCookieSales[j];
+      row.appendChild(tdCookies);
     }
+    var emptyCell = document.createElement('td');
+    row.appendChild(emptyCell);
+    table.appendChild(row);
   };
-  render();
-}
+};
 
 var header = function(){
   var table = document.getElementsByTagName('table')[0];
@@ -80,6 +77,7 @@ var header = function(){
 };
 
 header();
+render();
 // var body = document.getElementsByTagName('body')[0];
 // var storeName = document.createElement('h3');
 // storeName.innerText = this.name;
