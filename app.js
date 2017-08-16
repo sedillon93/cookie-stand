@@ -110,12 +110,12 @@ footer();
 // attempting to write the function that will create the new store
 function createStore(event){
   event.preventDefault();
-  var store = new Store();
-  store.name = this.elements['storeName'].value;
-  store.minCustomersHourly = this.elements['minHourly'].value;
-  store.maxCustomersHourly = this.elements['maxHourly'].value;
-  store.avgCookiesPerCustomer = this.elements['avgCookies'].value;
-  store.name.render();
+  var name = event.target.storeName.value;
+  var minCustomersHourly = event.target.minHourly.value;
+  var maxCustomersHourly = event.target.maxHourly.value;
+  var avgCookiesPerCustomer = event.target.avgCookies.value;
+  var name = new Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustomer);
+  name.render();
 };
 
 var form = document.getElementById('form');
