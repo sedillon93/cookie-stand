@@ -1,12 +1,10 @@
 * {
   box-sizing: border-box;
-  font-family: georgia;
-  color: white;
   font-size: 20px;
   line-height: 1.5
 }
 
-body {
+body.customer {
   background-color: gray;
 }
 
@@ -20,23 +18,30 @@ img {
   color: blue;
 }
 
+.data {
+  font-family: verdana;
+  color: #134613
+}
+
+.text {
+  font-family: georgia;
+  color: yellow;
+}
+
 #grandOpen {
   font-size: 34px;
   text-align: center;
 }
 
-.data {
+td {
   font-family: verdana;
-  color: #245a24;
+  color: white;
 }
 
-.table {
+table, tr, td {
   background-color: #28282d;
-  color: #e0e057;
-}
-
-.boxes {
-  background-color: #28282d;
+  border: 1px solid black;
+  color: white;
 }
 
 ul {
