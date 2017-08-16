@@ -41,11 +41,7 @@ td {
 table, tr, td {
   background-color: #28282d;
   border: 1px solid black;
-color: white;
-}
-
-.boxes {
-  background-color: #28282d;
+  color: white;
 }
 
 ul {
