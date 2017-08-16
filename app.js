@@ -19,6 +19,7 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     this.hourlyCookieSales = [];
     for (var i = 0; i < hours.length; i++){
       var hourTotal = Math.round(this.customersHourly() * this.avgCookiesPerCustomer);
+      console.log(hourTotal);
       this.hourlyCookieSales.push(hourTotal);
     }
     return this.hourlyCookieSales;
@@ -34,8 +35,8 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
   //call function to calculate total cookies sold in a day at specified location; create & add h1 node with name to DOM; create & add ul to DOM
   this.cookieSaleStatement = function(){
     this.totalCookies();
-    this.cookieSaleStatement();
   };
+  this.cookieSaleStatement();
 };
 
 var pike = new Store('1st and Pike', 23, 65, 6.3);
@@ -52,10 +53,10 @@ var render = function(){
     var row = document.createElement('tr');
     for (var j = 0; j < hours.length; j++){
       var tdCookies = document.createElement('td');
-      tdCookies.innerText = 'test';
+      tdCookies.innerText = pike.hourlyCookieSales[j];
       row.appendChild(tdCookies);
     }
-    var emptyCell = document.createElement('td');
+    // var emptyCell = document.createElement('td');
     // row.appendChild(emptyCell);
     table.appendChild(row);
   }
