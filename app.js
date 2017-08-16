@@ -93,6 +93,17 @@ var footer = function(){
   var total = document.createElement('td');
   total.innerText = 'Totals';
   row.appendChild(total);
+  //do something for the same number of times as there are elements in the hours array
+  for (var i = 0; i < hours.length; i++){
+    var allStoreTotal = 0;
+    //do something for the same number of times as there are things in the stores array
+    for (var j = 0; j < stores.length; j++){
+      allStoreTotal += stores[j].hourlyCookieSales[i];
+    };
+    var td = document.createElement('td');
+    td.innerText = allStoreTotal;
+    row.appendChild(td);
+  }
   table.appendChild(row);
 };
 
