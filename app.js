@@ -113,19 +113,23 @@ for (var i = 0; i < stores.length; i++){
 }
 footer();
 
-
-
-
-
 //attempting to write the function that will create the new store
 function collectDataAndAppend(event){
   //prevent default setting which sends form data to another source; instead keep it here to use it in same page
   event.preventDefault;
+  //create a new instance of a Store object
+  var store = new Store();
   //assign store's name, min cust, max cust, & avg cookies to a newly created instance
+store.name =
+store.minCustomersHourly =
+store.maxCustomersHourly =
+store.avgCookiesPerCustomer =
+  //put new instance into stores array
 };
 
 //what event you are listening for & what to do when it happens
 //when user hits "create store", it is a submit event
+//get the form element using its id
 var form = document.getElementById('form');
+//when a submit event happens, run the collectAndAppend function
 form.addEventListener('submit', collectDataAndAppend);
-//when submit event happens, run the collectAndAppend function
