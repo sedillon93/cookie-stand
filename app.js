@@ -52,13 +52,13 @@ var render = function(){
     var row = document.createElement('tr');
     for (var j = 0; j < hours.length; j++){
       var tdCookies = document.createElement('td');
-      tdCookies.innerText = stores[i].hourlyCookieSales[j];
+      tdCookies.innerText = 'test';
       row.appendChild(tdCookies);
     }
     var emptyCell = document.createElement('td');
-    row.appendChild(emptyCell);
+    // row.appendChild(emptyCell);
     table.appendChild(row);
-  };
+  }
 };
 
 var header = function(){
