@@ -45,23 +45,6 @@ var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 
-var stores = [pike, seaTac, seattleCenter, capHill, alki];
-
-var render = function(){
-  var table = document.getElementsByTagName('table')[0];
-  for (var i = 0; i < stores.length; i++){
-    var row = document.createElement('tr');
-    for (var j = 0; j < hours.length; j++){
-      var tdCookies = document.createElement('td');
-      tdCookies.innerText = pike.hourlyCookieSales[j];
-      row.appendChild(tdCookies);
-    }
-    // var emptyCell = document.createElement('td');
-    // row.appendChild(emptyCell);
-    table.appendChild(row);
-  }
-};
-
 var header = function(){
   var table = document.getElementsByTagName('table')[0];
   var tr = document.createElement('tr');
@@ -77,23 +60,26 @@ var header = function(){
   }
 };
 
+var stores = [pike, seaTac, seattleCenter, capHill, alki];
+var render = function(){
+  var table = document.getElementsByTagName('table')[0];
+  for (var i = 0; i < stores.length; i++){
+    var row = document.createElement('tr');
+    var name = document.createElement('td');
+    name.innerText = stores[i].name;
+    row.appendChild(name);
+    for (var j = 0; j < hours.length; j++){
+      var tdCookies = document.createElement('td');
+      tdCookies.innerText = stores[i].hourlyCookieSales[j];
+      row.appendChild(tdCookies);
+    }
+    table.appendChild(row);
+  }
+};
+
+var footer = function(){
+
+};
+
 header();
 render();
-// var body = document.getElementsByTagName('body')[0];
-// var storeName = document.createElement('h3');
-// storeName.innerText = this.name;
-// body.appendChild(storeName);
-//
-// var ul = document.createElement('ul');
-// body.appendChild(ul);
-// //for every element in the hourlyCookieSales array create a new li node & add the text '#am/pm: # cookies' to ul; add li node to ul node in the DOM
-// for (var i = 0; i < this.hourlyCookieSales.length; i++) {
-//   var newLi = document.createElement('li');
-//   newLi.innerText = hours[i] + ': ' + this.hourlyCookieSales[i] + ' cookies';
-//   ul.appendChild(newLi);
-// }
-// //create a new li element with the text of total; append li node to ul node in DOM
-// var totalCookies = document.createElement('li');
-// totalCookies.innerText = 'Total: ' + this.total + ' cookies';
-// ul.appendChild(totalCookies);
-// };
