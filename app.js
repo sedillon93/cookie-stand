@@ -119,9 +119,8 @@ function createStore(event){
   store.name = this.elements['storeName'].value;
   store.minCustomersHourly = this.elements['minHourly'].value;
   store.maxCustomersHourly = this.elements['maxHourly'].value;
-  console.log(store.maxCustomersHourly);
-  // store.maxCustomersHourly =
-  // store.avgCookiesPerCustomer
+  store.avgCookiesPerCustomer = this.elements['avgCookies'].value;
+  console.log(store.avgCookiesPerCustomer);
 };
 
 var form = document.getElementById('form');
