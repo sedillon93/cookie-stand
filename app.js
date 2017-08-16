@@ -58,6 +58,9 @@ var header = function(){
     cellHeaders.innerText = hours[i];
     tr.appendChild(cellHeaders);
   }
+  var dailyTotal = document.createElement('th');
+  dailyTotal.innerText = 'Daily Location Total';
+  tr.appendChild(dailyTotal);
 };
 
 var stores = [pike, seaTac, seattleCenter, capHill, alki];
@@ -73,13 +76,22 @@ var render = function(){
       tdCookies.innerText = stores[i].hourlyCookieSales[j];
       row.appendChild(tdCookies);
     }
+    var total = document.createElement('td');
+    total.innerText = stores[i].total;
+    row.appendChild(total);
     table.appendChild(row);
   }
 };
 
 var footer = function(){
-
+  var table = document.getElementsByTagName('table')[0];
+  var row = document.createElement('tr');
+  var total = document.createElement('td');
+  total.innerText = 'Totals';
+  row.appendChild(total);
+  table.appendChild(row);
 };
 
 header();
 render();
+footer();
