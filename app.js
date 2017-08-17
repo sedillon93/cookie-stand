@@ -110,13 +110,14 @@ function createStore(event){
   var name = event.target.storeName.value;
   var minCustomersHourly = parseInt(event.target.minHourly.value);
   var maxCustomersHourly = parseInt(event.target.maxHourly.value);
-  var avgCookiesPerCustomer = parseInt(event.target.avgCookies.value);
+  var avgCookiesPerCustomer = parseFloat(event.target.avgCookies.value);
   var table = document.getElementById('summary');
   var footer = document.getElementById('footer');
   table.removeChild(footer);
   var name = new Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustomer);
   name.render();
   window.footer();
+  form.reset();
 };
 //when submit event happens, run createStore
 var form = document.getElementById('form');
