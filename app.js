@@ -1,5 +1,6 @@
 'use strict';
 
+var stores = [];
 var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
 function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustomer){
@@ -9,6 +10,7 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
   this.avgCookiesPerCustomer = avgCookiesPerCustomer;
   this.total = 0;
   this.hourlyCookieSales = [];
+  stores.push(this);
   //generate random number of customers in an hour
   this.customersHourly = function(){
     var customers = Math.floor(Math.random() * (this.maxCustomersHourly - this.minCustomersHourly) + this.minCustomersHourly);
@@ -55,13 +57,11 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
   };
 };
 
-var pike = new Store('1st and Pike', 23, 65, 6.3);
-var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
-var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
-var capHill = new Store('Capitol Hill', 20, 38, 2.3);
-var alki = new Store('Alki', 2, 16, 4.6);
-
-var stores = [pike, seaTac, seattleCenter, capHill, alki];
+new Store('1st and Pike', 23, 65, 6.3);
+new Store('SeaTac Airport', 3, 24, 1.2);
+new Store('Seattle Center', 11, 38, 3.7);
+new Store('Capitol Hill', 20, 38, 2.3);
+new Store('Alki', 2, 16, 4.6);
 
 var header = function(){
   var table = document.getElementById('summary');
@@ -111,9 +111,9 @@ footer();
 function createStore(event){
   event.preventDefault();
   var name = event.target.storeName.value;
-  var minCustomersHourly = event.target.minHourly.value;
-  var maxCustomersHourly = event.target.maxHourly.value;
-  var avgCookiesPerCustomer = event.target.avgCookies.value;
+  var minCustomersHourly = parseInt(event.target.minHourly.value);
+  var maxCustomersHourly = parseInt(event.target.maxHourly.value);
+  var avgCookiesPerCustomer = parseInt(event.target.avgCookies.value);
   var name = new Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustomer);
   name.render();
 };
