@@ -55,7 +55,9 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     total.innerText = this.total;
     row.appendChild(total);
     var footer = document.getElementById('footer');
-    table.insertBefore(row, footer);
+    table.removeChild(footer);
+    table.appendChild(row);
+    table.appendChild(footer);
   };
 };
 
@@ -87,7 +89,7 @@ header();
 var footer = function(){
   var table = document.getElementById('summary');
   var row = document.createElement('tr');
-  row.className = ('footer');
+  row.id = ('footer');
   var total = document.createElement('td');
   total.innerText = 'Totals';
   row.appendChild(total);
