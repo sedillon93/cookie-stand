@@ -54,7 +54,8 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
     var total = document.createElement('td');
     total.innerText = this.total;
     row.appendChild(total);
-    table.appendChild(row);
+    var footer = document.getElementById('footer');
+    table.insertBefore(row, footer);
   };
 };
 
@@ -83,6 +84,28 @@ var header = function(){
 };
 header();
 
+var footer = function(){
+  var table = document.getElementById('summary');
+  var row = document.createElement('tr');
+  row.className = ('footer');
+  var total = document.createElement('td');
+  total.innerText = 'Totals';
+  row.appendChild(total);
+  //do something for the same number of times as there are elements in the hours array
+  for (var i = 0; i < hours.length; i++){
+    var allStoreTotal = 0;
+    //do something for the same number of times as there are things in the stores array
+    for (var j = 0; j < stores.length; j++){
+      allStoreTotal += stores[j].hourlyCookieSales[i];
+    };
+    var td = document.createElement('td');
+    td.innerText = allStoreTotal;
+    row.appendChild(td);
+  }
+  table.appendChild(row);
+};
+footer();
+
 //function that will create the new store
 //why do I need to include name.render()? Shouldn't new Store object get rendered when I render all of the stores in the stores array?
 function createStore(event){
@@ -101,24 +124,3 @@ form.addEventListener('submit', createStore);
 for (var i = 0; i < stores.length; i++){
   stores[i].render();
 }
-
-var footer = function(){
-  var table = document.getElementById('total');
-  var row = document.createElement('tr');
-  var total = document.createElement('td');
-  total.innerText = 'Totals';
-  row.appendChild(total);
-  //do something for the same number of times as there are elements in the hours array
-  for (var i = 0; i < hours.length; i++){
-    var allStoreTotal = 0;
-    //do something for the same number of times as there are things in the stores array
-    for (var j = 0; j < stores.length; j++){
-      allStoreTotal += stores[j].hourlyCookieSales[i];
-    };
-    var td = document.createElement('td');
-    td.innerText = allStoreTotal;
-    row.appendChild(td);
-  }
-  table.appendChild(row);
-};
-footer();
