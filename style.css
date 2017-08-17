@@ -56,8 +56,6 @@ table#summary {
 
 ul {
   list-style-type: none;
-  position: absolute;
-  bottom: 10px;
 }
 
 li {
