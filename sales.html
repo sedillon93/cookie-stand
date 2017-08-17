@@ -6,8 +6,32 @@
     <link rel="stylesheet" href="style.css" type="text/css">
   </head>
   <body>
-    <table>
+    <form id = "form">
+      <table id="entryField">
+        <tr>
+          <td><label for="storeName">Store Name</label></td>
+          <td><input type="text" name="storeName" value="" placeholder="Enter store name" required/></td>
+        </tr>
+        <tr>
+          <td><label for="minHourly">Minimum hourly customers</label></td>
+          <td><input type="number" name="minHourly" step="0.1" value="" placeholder="Enter number" required/></td>
+        </tr>
+        <tr>
+          <td><label for="maxHourly">Maximum hourly customers</label></td>
+          <td><input type="number" name="maxHourly" step="0.1" value="" placeholder="Enter number" required/></td>
+        </tr>
+        <tr>
+          <td><label for="avgCookies">Average cookies sold per customer</label></td>
+          <td><input type="number" name="avgCookies" step="0.1" value="" placeholder="Enter number" required/></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" name="create" value="Create store" id="submit"/></td>
+        </tr>
+      </table>
+    </form>
+    <table id="summary">
     </table>
   </body>
-  <script src="app.js" type="text/javascript"></script>
+  <script src="app.js"></script>
 </html>
