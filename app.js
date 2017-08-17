@@ -37,6 +37,7 @@ function Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustom
   this.cookieSaleStatement = function(){
     this.totalCookies();
   };
+
   this.cookieSaleStatement();
 
   this.render = function(){
@@ -80,6 +81,26 @@ var header = function(){
   dailyTotal.innerText = 'Daily Location Total';
   tr.appendChild(dailyTotal);
 };
+header();
+
+//function that will create the new store
+function createStore(event){
+  event.preventDefault();
+  var name = event.target.storeName.value;
+  var minCustomersHourly = parseInt(event.target.minHourly.value);
+  var maxCustomersHourly = parseInt(event.target.maxHourly.value);
+  var avgCookiesPerCustomer = parseInt(event.target.avgCookies.value);
+  var name = new Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustomer);
+  name.render();
+};
+
+for (var i = 0; i < stores.length; i++){
+  stores[i].render();
+}
+
+//when submit event happens, run createStore
+var form = document.getElementById('form');
+form.addEventListener('submit', createStore);
 
 var footer = function(){
   var table = document.getElementById('summary');
@@ -100,24 +121,4 @@ var footer = function(){
   }
   table.appendChild(row);
 };
-
-header();
-for (var i = 0; i < stores.length; i++){
-  stores[i].render();
-}
 footer();
-
-// attempting to write the function that will create the new store
-function createStore(event){
-  event.preventDefault();
-  var name = event.target.storeName.value;
-  var minCustomersHourly = parseInt(event.target.minHourly.value);
-  var maxCustomersHourly = parseInt(event.target.maxHourly.value);
-  var avgCookiesPerCustomer = parseInt(event.target.avgCookies.value);
-  var name = new Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustomer);
-  name.render();
-};
-
-var form = document.getElementById('form');
-//when a submit event happens, run the collectAndAppend function
-form.addEventListener('submit', createStore);
