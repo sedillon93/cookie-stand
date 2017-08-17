@@ -4,6 +4,22 @@
   line-height: 1.5
 }
 
+.col-2 {
+  width: 16%;
+  float: left;
+}
+
+.col-8 {
+  width: 68%;
+  float: left;
+}
+
+#sidebar {
+  background-image: url(https://raw.githubusercontent.com/codefellows/seattle-201d25/master/class-09-css_wireframe_part_1/lab/assets/fish.jpg);
+  background-repeat: repeat-y;
+  float: left;
+}
+
 body.customer {
   background-color: gray;
 }
@@ -51,7 +67,7 @@ table#entryField {
 table#summary {
   width: 100%;
   margin: 2.5% 0;
-  border: collapse;
+  border-collapse: collapse;
 }
 
 ul {
