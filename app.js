@@ -84,6 +84,7 @@ var header = function(){
 header();
 
 //function that will create the new store
+//why do I need to include name.render()? Shouldn't new Store object get rendered when I render all of the stores in the stores array?
 function createStore(event){
   event.preventDefault();
   var name = event.target.storeName.value;
@@ -93,17 +94,16 @@ function createStore(event){
   var name = new Store(name, minCustomersHourly, maxCustomersHourly, avgCookiesPerCustomer);
   name.render();
 };
+//when submit event happens, run createStore
+var form = document.getElementById('form');
+form.addEventListener('submit', createStore);
 
 for (var i = 0; i < stores.length; i++){
   stores[i].render();
 }
 
-//when submit event happens, run createStore
-var form = document.getElementById('form');
-form.addEventListener('submit', createStore);
-
 var footer = function(){
-  var table = document.getElementById('summary');
+  var table = document.getElementById('total');
   var row = document.createElement('tr');
   var total = document.createElement('td');
   total.innerText = 'Totals';
