@@ -124,17 +124,20 @@ function createStore(event){
 //when submit event happens, run createStore
 var form = document.getElementById('form');
 form.addEventListener('submit', createStore);
-
-function greaterThanMin(event){
-  var max = parseInt(document.getElementById('max'));
-  var min = parseInt(document.getElementById('min'));
-  if (max < min){
-    alert('wrong!');
-  }
+//
+function printTest(event){
+  alert('wrong!');
 }
-
-var max = document.getElementById('max');
-max.addEventListener('blur', greaterThanMin);
+// function greaterThanMin(event){
+//   // var max = parseInt(document.getElementById('max'));
+//   // var min = parseInt(document.getElementById('min'));
+//   // if (max < min){
+//   alert('wrong!');
+//   // }
+// }
+//
+// var max = document.getElementById('max');
+// max.addEventListener('blur', greaterThanMin);
 
 header();
 function body(){
