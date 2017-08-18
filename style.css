@@ -46,6 +46,10 @@ img {
   float: right;
 }
 
+figcaption {
+  text-align: center;
+}
+
 .highlights {
   font-family: 'Oswald', sans-serif;
   color: blue;
