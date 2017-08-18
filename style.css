@@ -95,8 +95,12 @@ table#summary {
   border-collapse: collapse;
 }
 
-ul {
-  list-style-type: none;
+ul.underline {
+  text-decoration: underline;
+}
+
+li.location {
+  display: list-item;
 }
 
 li {
