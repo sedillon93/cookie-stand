@@ -126,7 +126,11 @@ var form = document.getElementById('form');
 form.addEventListener('submit', createStore);
 //
 function printTest(event){
-  alert('wrong!');
+  var max = parseInt(form.maxHourly.value);
+  var min = parseInt(form.minHourly.value);
+  if (max < min){
+    alert('wrong!');
+  };
 }
 // function greaterThanMin(event){
 //   // var max = parseInt(document.getElementById('max'));
