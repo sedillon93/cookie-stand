@@ -4,13 +4,59 @@
   line-height: 1.5
 }
 
+.clearfix {
+  clear: both;
+}
+
 body.customer {
-  background-color: gray;
+  background-color: rgba(241, 213, 171, 1);
+}
+
+.col-2 {
+  width: 16%;
+  float: left;
+}
+
+.col-8 {
+  width: 68%;
+  float: left;
+}
+
+.navbar {
+  padding: 0 5%;
+  text-align: center;
+}
+
+.notNavbar {
+  padding: 0 8%;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+#sidebar {
+  background-image: url(https://raw.githubusercontent.com/codefellows/seattle-201d25/master/class-09-css_wireframe_part_1/lab/assets/fish.jpg);
+  background-repeat: repeat-y;
+  float: left;
+}
+
+#mainSalmon {
+  margin-top: 2%;
 }
 
 img {
   margin: auto;
   display: block;
+}
+
+.hours {
+  float: right;
+}
+
+figcaption {
+  text-align: center;
 }
 
 .highlights {
@@ -38,16 +84,32 @@ td {
   color: white;
 }
 
-table, tr, td {
+table {
   background-color: #28282d;
   border: 1px solid black;
   color: white;
 }
 
+table#entryField {
+  border: none;
+}
+
+table#summary {
+  width: 100%;
+  margin: 2.5% 0;
+  border-collapse: collapse;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
 ul {
   list-style-type: none;
-  position: absolute;
-  bottom: 10px;
+}
+
+li.location {
+  display: block;
 }
 
 li {

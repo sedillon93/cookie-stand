@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Salmon Cookie Sales</title>
+    <link rel="stylesheet" <href="normalize.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
   </head>
   <body>
+    <table id="summary">
+    </table>
     <form id = "form">
       <table id="entryField">
         <tr>
@@ -14,11 +17,11 @@
         </tr>
         <tr>
           <td><label for="minHourly">Minimum hourly customers</label></td>
-          <td><input type="number" name="minHourly" step="1" value="" placeholder="Enter number" required/></td>
+          <td id="min"><input type="number" name="minHourly" step="1" value="" placeholder="Enter number" required/></td>
         </tr>
         <tr>
           <td><label for="maxHourly">Maximum hourly customers</label></td>
-          <td><input type="number" name="maxHourly" step="1" value="" placeholder="Enter number" required/></td>
+          <td id="max"><input type="number" name="maxHourly" step="1" value="" placeholder="Enter number" required/></td>
         </tr>
         <tr>
           <td><label for="avgCookies">Average cookies sold per customer</label></td>
@@ -30,8 +33,6 @@
         </tr>
       </table>
     </form>
-    <table id="summary">
-    </table>
   </body>
   <script src="app.js"></script>
 </html>
