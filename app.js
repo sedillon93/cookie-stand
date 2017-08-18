@@ -126,6 +126,17 @@ function createStore(event){
 var form = document.getElementById('form');
 form.addEventListener('submit', createStore);
 
+function greaterThanMin(event){
+  var max = parseInt(document.getElementById('max'));
+  var min = parseInt(document.getElementById('min'));
+  if (max < min){
+    alert('wrong!');
+  }
+}
+
+var max = document.getElementById('max');
+max.addEventListener('blur', greaterThanMin);
+
 for (var i = 0; i < stores.length; i++){
   stores[i].render();
 }
