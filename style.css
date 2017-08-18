@@ -9,7 +9,7 @@
 }
 
 body.customer {
-  background-color: gray;
+  background-color: #d29191;
 }
 
 .col-2 {
@@ -95,12 +95,16 @@ table#summary {
   border-collapse: collapse;
 }
 
-ul.underline {
+.underline {
   text-decoration: underline;
 }
 
+ul {
+  list-style-type: none;
+}
+
 li.location {
-  display: list-item;
+  display: block;
 }
 
 li {
