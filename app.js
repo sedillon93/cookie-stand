@@ -81,7 +81,6 @@ var header = function(){
   dailyTotal.innerText = 'Daily Location Total';
   tr.appendChild(dailyTotal);
 };
-header();
 
 var footer = function(){
   var table = document.getElementById('summary');
@@ -137,7 +136,11 @@ function greaterThanMin(event){
 var max = document.getElementById('max');
 max.addEventListener('blur', greaterThanMin);
 
-for (var i = 0; i < stores.length; i++){
-  stores[i].render();
-}
+header();
+function body(){
+  for (var i = 0; i < stores.length; i++){
+    stores[i].render();
+  }
+};
+body();
 footer();
