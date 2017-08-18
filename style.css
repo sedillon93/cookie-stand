@@ -22,6 +22,11 @@ body.customer {
   float: left;
 }
 
+.navbar {
+  padding: 0 5%;
+  text-align: center;
+}
+
 .notNavbar {
   padding: 0 8%;
 }
