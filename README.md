@@ -1,2 +1,2 @@
 # cookie-stand
-Cookie-stand to sell our salmon cookies
+Create html pages for merchandise, our story, main page, store locations, reviews, and contact information.
