@@ -125,7 +125,7 @@ function createStore(event){
 var form = document.getElementById('form');
 form.addEventListener('submit', createStore);
 //
-function printTest(event){
+function checkMax(event){
   var max = parseInt(form.maxHourly.value);
   var min = parseInt(form.minHourly.value);
   if (max < min){
@@ -140,8 +140,8 @@ function printTest(event){
 //   // }
 // }
 //
-// var max = document.getElementById('max');
-// max.addEventListener('blur', greaterThanMin);
+var max = document.getElementById('max');
+max.addEventListener('onblur', checkMax);
 
 header();
 function body(){
