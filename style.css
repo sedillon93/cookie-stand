@@ -51,7 +51,7 @@ h1 {
 
 h1#brand {
   font-size: 3em;
-  text-align: center;
+  font-family: 'Faustina', serif;
 }
 
 #mainSalmon {
@@ -72,12 +72,12 @@ figcaption {
 }
 
 .highlights {
-  font-family: 'Oswald', sans-serif;
-  color: #F50057;
+  font-family: 'Faustina', serif;
+  color: #009688;
 }
 
 #grandOpening {
-  font-size: 46px;
+  font-size: 2em;
   text-align: center;
 }
 
