@@ -7,39 +7,26 @@
 .clearfix {
   clear: both;
 }
-
+/*
 body.customer {
   background-color: rgba(241, 213, 171, 1);
-}
-
-.col-2 {
-  width: 16%;
-  float: left;
-}
-
-.col-8 {
-  width: 68%;
-  float: left;
-}
-
+}*/
 .navbar {
+  background-color: rgba(241, 213, 171, 1)
+}
+
+.navitem {
   padding: 0 5%;
   text-align: center;
 }
 
-.notNavbar {
+.main{
   padding: 0 8%;
 }
 
 h1 {
   font-size: 2.5em;
   text-align: center;
-}
-
-#sidebar {
-  background-image: url(https://raw.githubusercontent.com/codefellows/seattle-201d25/master/class-09-css_wireframe_part_1/lab/assets/fish.jpg);
-  background-repeat: repeat-y;
-  float: left;
 }
 
 #mainSalmon {
