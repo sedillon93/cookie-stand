@@ -7,16 +7,18 @@
 .clearfix {
   clear: both;
 }
-/*
+
 body.customer {
-  background-color: rgba(241, 213, 171, 1);
-}*/
+  margin: 0;
+}
 .navbar {
-  background-color: rgba(241, 213, 171, 1)
+  background-color: rgba(241, 213, 171, 1);
+  padding: 35px 0;
+  margin: 0;
 }
 
 .navitem {
-  padding: 0 5%;
+  padding: 0 5.5%;
   text-align: center;
 }
 
