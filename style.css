@@ -3,11 +3,9 @@
   font-size: 20px;
   line-height: 1.5
 }
-
 .clearfix {
   clear: both;
 }
-
 body.customer {
   margin: 0;
   background-color: #90CAF9;
@@ -18,21 +16,17 @@ body.customer {
   margin: 0;
   text-align: center;
 }
-
 .navitem {
   padding: 0 5.5%;
   text-align: center;
   color: white;
 }
-
 a:active {
   color: white;
 }
-
 a:visited {
   color: #d0caca;
 }
-
 .main{
   padding: 0 8%;
 }
@@ -45,87 +39,85 @@ footer {
   margin: 0;
   color: white;
 }
-
 h1 {
   text-align: center;
   font-size: 2em;
 }
-
 h1#brand {
   font-size: 3em;
   font-family: 'Faustina', serif;
 }
-
 #mainSalmon {
   margin-top: 2%;
 }
-
 img {
   margin: auto;
   display: block;
 }
-
 .hours {
   float: right;
 }
-
 figcaption {
   text-align: center;
 }
-
 .highlights {
   font-family: 'Faustina', serif;
   color: #009688;
 }
-
 #grandOpening {
   font-size: 2em;
   text-align: center;
 }
-
 .data {
   font-family: verdana;
   color: #134613
 }
-
-.text {
+p {
   font-family: georgia;
-  color: yellow;
+  color: #4A148C;
 }
-
+#copy {
+  color: #d0caca;
+}
+.merchandise  {
+  background-color: #F5F5F5;
+  color: #616161;
+  padding: 5px;
+  border-collapse: collapse;
+}
+td.merchandise {
+  border: 1px solid black;
+}
+table.merchandise {
+  padding: 10px;
+  border: none;
+}
 td {
   font-family: verdana;
   color: white;
 }
-
 table {
   background-color: #28282d;
   border: 1px solid black;
   color: white;
 }
-
 table#entryField {
   border: none;
 }
-
 table#summary {
   width: 100%;
   margin: 2.5% 0;
   border-collapse: collapse;
 }
-
 .underline {
   text-decoration: underline;
 }
-
 ul {
   list-style-type: none;
 }
-
 li.location {
   display: block;
 }
-
 li {
   text-decoration: none;
   display: inline-block;
