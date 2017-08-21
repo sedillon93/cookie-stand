@@ -36,7 +36,9 @@ a:visited {
 .main{
   padding: 0 8%;
 }
-
+.main#contactPage {
+  height: -webkit-fill-available;
+}
 footer {
   background-color: #0D47A1;
   padding: 10px 30px;
