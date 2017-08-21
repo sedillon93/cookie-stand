@@ -3,115 +3,121 @@
   font-size: 20px;
   line-height: 1.5
 }
-
 .clearfix {
   clear: both;
 }
-
 body.customer {
-  background-color: rgba(241, 213, 171, 1);
+  margin: 0;
+  background-color: #90CAF9;
 }
-
-.col-2 {
-  width: 16%;
-  float: left;
-}
-
-.col-8 {
-  width: 68%;
-  float: left;
-}
-
 .navbar {
-  padding: 0 5%;
+  background-color: #1565C0;
+  padding: 35px 0;
+  margin: 0;
   text-align: center;
 }
-
-.notNavbar {
+.navitem {
+  padding: 0 5.5%;
+  text-align: center;
+  color: white;
+}
+a:active {
+  color: white;
+}
+a:visited {
+  color: #d0caca;
+}
+.main{
   padding: 0 8%;
 }
-
+.main#contactPage {
+  height: -webkit-fill-available;
+}
+footer {
+  background-color: #0D47A1;
+  padding: 10px 30px;
+  margin: 0;
+  color: white;
+}
 h1 {
-  font-size: 2.5em;
   text-align: center;
+  font-size: 2em;
 }
-
-#sidebar {
-  background-image: url(https://raw.githubusercontent.com/codefellows/seattle-201d25/master/class-09-css_wireframe_part_1/lab/assets/fish.jpg);
-  background-repeat: repeat-y;
-  float: left;
+h1#brand {
+  font-size: 3em;
+  font-family: 'Faustina', serif;
 }
-
 #mainSalmon {
   margin-top: 2%;
 }
-
 img {
   margin: auto;
   display: block;
 }
-
 .hours {
   float: right;
 }
-
 figcaption {
   text-align: center;
 }
-
 .highlights {
-  font-family: 'Oswald', sans-serif;
-  color: blue;
+  font-family: 'Faustina', serif;
+  color: #009688;
 }
-
+#grandOpening {
+  font-size: 2em;
+  text-align: center;
+}
 .data {
   font-family: verdana;
   color: #134613
 }
-
-.text {
+p {
   font-family: georgia;
-  color: yellow;
+  color: #4A148C;
 }
-
-#grandOpen {
-  font-size: 34px;
-  text-align: center;
+#copy {
+  color: #d0caca;
 }
-
+.merchandise  {
+  background-color: #F5F5F5;
+  color: #616161;
+  padding: 5px;
+  border-collapse: collapse;
+}
+td.merchandise {
+  border: 1px solid black;
+}
+table.merchandise {
+  padding: 10px;
+  border: none;
+}
 td {
   font-family: verdana;
   color: white;
 }
-
 table {
   background-color: #28282d;
   border: 1px solid black;
   color: white;
 }
-
 table#entryField {
   border: none;
 }
-
 table#summary {
   width: 100%;
   margin: 2.5% 0;
   border-collapse: collapse;
 }
-
 .underline {
   text-decoration: underline;
 }
-
 ul {
   list-style-type: none;
 }
-
 li.location {
   display: block;
 }
-
 li {
   text-decoration: none;
   display: inline-block;
